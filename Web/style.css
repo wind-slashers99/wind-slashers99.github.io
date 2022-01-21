@@ -2,7 +2,7 @@
 :root {
     --primary-color: rgba(13, 110, 139, 0.75);
     --overlay-color: rgba(24, 39, 51 , 0.85);
-    --menu-speed: 0.75s;
+    --menu-speed: 1s;
   }
   
   * {
@@ -183,9 +183,9 @@
   
   .menu-wrap .menu > div {
     background: var(--overlay-color);
-    border-radius: 50%;
-    width: 200vw;
-    height: 200vw;
+    border-radius: 500%;
+    width: 300vw;
+    height: 300vw;
     display: flex;
     flex: none;
     align-items: center;
