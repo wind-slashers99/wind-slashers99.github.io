@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Music</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./style2.css">
+    </head>
+    
+    <body oncontextmenu="return false">
+        <div class="player">
+            <div class="cover">
+                <img src="dab-squidward.gif" width="100%" height="250">
+            </div>
+            <div class="info">
+                <div class="title">The Shade</div>
+                <div class="singer">Rex Orange Country</div>
+            </div>
+            <div class="music-box">
+                <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekbar()">
+                <audio class="music-element">
+                    <source src="the shade.mp3" type="audio/mp3">
+                </audio>
+                <span class="current-time">0:0</span>
+                <span class="duration">0:0</span>
+                <span class="play" onclick="handlePlay()">
+                    <i class="material-icons">play_arrow</i>
+                </span>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
