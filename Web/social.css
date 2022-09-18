@@ -1,4 +1,9 @@
-
+html,body{
+    /* display: grid; */
+    /* height: 100%; */
+    /* width: 100%; */
+    /* place-items: center; */
+  }
 .wrapper .button{
   display: inline-block;
   height: 60px;

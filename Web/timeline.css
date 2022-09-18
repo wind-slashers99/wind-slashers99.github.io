@@ -5,7 +5,7 @@
     display: grid;  
     grid-template-columns: 1fr 3px 1fr;  
     font-family: "Fira Sans", sans-serif;  
-    color: #777777;  
+    color: #000000;  
    }  
    .timeline__component {  
     margin: 0 20px 20px 20px;  
@@ -13,7 +13,7 @@
    .timeline__component--bg {  
     padding: 1.5em;  
     background: rgba(255, 255, 255, 0.2);  
-    box-shadow: 0 0 3px #106fb4;  
+    box-shadow: 0 0 3px #000000;  
     border-radius: 10px;  
    }  
    /* LEAVE TILL LAST */  
@@ -31,7 +31,7 @@
     transform: translateX(-50%);  
     width: 15px;  
     height: 15px;  
-    background: #3F8BC3;  
+    background: #c33f3f;  
     border-radius: 50%;  
    }  
    /* LEAVE TILL LAST */  
@@ -41,19 +41,20 @@
    }  
    .timeline__date--right {  
     text-align: right;  
-    color: #106fb4;  
+    color: #000000;  
    }  
    .timeline__title {  
     margin: 0;  
     font-size: 1.15em;  
     font-weight: bold;  
-    color: #391472;  
+    color: #000000;  
    }  
    .timeline__paragraph {  
     line-height: 1.5;  
    }  
-   .timeline__date {  
-    color: #106fb4;  
+   .timeline__date--left {  
+    color: #000000;  
+    text-align:left;
    }  
    .titol {  
     font-style: italic;  
