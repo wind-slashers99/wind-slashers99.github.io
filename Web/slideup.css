@@ -1,0 +1,28 @@
+.container{
+    display:flex;
+    justify-content:center;
+    margin-top: 12em;
+}
+
+.inner{
+    text-align: center;
+    overflow: hidden;
+    padding: 0.4em;
+}
+
+.inner > h1{
+    font-size: 3.5em;
+    animation: Slide_Up 1.4s ease;
+}
+.inner > h2{
+    animation: Slide_Up 2.1s ease;
+}
+
+@keyframes Slide_Up{
+    0%{
+        transform:translateY(250px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
