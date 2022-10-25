@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.card {
+    width: 400px;
+    height: 600px;
+    background-image: url(dms4.jpg);
+    background-size: cover;
+    box-shadow: 0 14px 25px 0px #00000026;
+    position: relative;
+    border-radius: 15px;
+}
+.card-item {
+    position: absolute;
+    padding: 30px;
+    font-family: sans-serif;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    border-radius: 12px;
+}
+.card-item h1 {
+    margin-bottom: 15px;
+}
+.card-item p {
+    font-size: 15px;
+}
