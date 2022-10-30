@@ -1,8 +1,6 @@
 const imgInput = document.querySelector('#img-select')
 const imgPreview = document.querySelector('.preview')
-if(!window.EyeDropper){
-    alert("Your browser does not support this feature")
-}
+
 const eyeDropper = new EyeDropper()
 const pickerBtn = document.querySelector('.open-picker')
 const result = document.querySelector('.res')
