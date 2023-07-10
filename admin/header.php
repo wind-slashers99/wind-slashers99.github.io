@@ -12,8 +12,9 @@ session_start();
 
   <!--Font awesome icons-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="../fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../DataTables/css/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="DataTables/css/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="css/pesan.css">
 
 
 
@@ -24,16 +25,16 @@ session_start();
 
 
   <!--Simplebar css-->
-  <link rel="stylesheet" href="../assets/vendor/css/simplebar.min.css">
+  <link rel="stylesheet" href="assets/vendor/css/simplebar.min.css">
 
   <!--Choices css-->
-  <link rel="stylesheet" href="../assets/vendor/css/choices.min.css">
+  <link rel="stylesheet" href="assets/vendor/css/choices.min.css">
 
   <!--Date range picker-->
-  <link rel="stylesheet" href="../assets/vendor/css/daterangepicker.css">
+  <link rel="stylesheet" href="assets/vendor/css/daterangepicker.css">
 
   <!--Main style-->
-  <link rel="stylesheet" href="../assets/css/style.min.css" id="switchThemeStyle">
+  <link rel="stylesheet" href="assets/css/style.min.css" id="switchThemeStyle">
 </head>
 
 <body>
@@ -116,49 +117,32 @@ session_start();
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="masyarakat.php" class="nav-link d-flex align-items-center text-truncate ">
+                  <a href="pengaduan.php" class="nav-link d-flex align-items-center text-truncate ">
                     <span class="sidebar-icon">
                       <i class="fas fa-user fs-5"></i>
                     </span>
-                    <span class="sidebar-text">Data Masyarakat</span>
+                    <span class="sidebar-text">Form Pengaduan</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="petugas.php" class="nav-link d-flex align-items-center text-truncate ">
+                  <a href="cek.php" class="nav-link d-flex align-items-center text-truncate ">
                     <span class="sidebar-icon">
                       <i class="fas fa-briefcase fs-5"></i>
                     </span>
-                    <span class="sidebar-text">Data Petugas</span>
+                    <span class="sidebar-text">Cek Pengaduan</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pengaduan.php" class="nav-link d-flex align-items-center text-truncate ">
+                  <a href="regis.php" class="nav-link d-flex align-items-center text-truncate ">
                     <span class="sidebar-icon">
                       <i class="fas fa-file-invoice fs-5"></i>
                     </span>
-                    <span class="sidebar-text">Data Pengaduan</span>
+                    <span class="sidebar-text">Registrasi</span>
                   </a>
                 </li>
-                <li class="nav-item mt-2 sidebar-title text-truncate small opacity-50">
-                  <i class="bi bi-three-dots align-middle"></i>
-                  <span>Lainnya</span>
-                </li>
-                <li class="nav-item">
-                  <a href="print_laporan.php" class="nav-link d-flex align-items-center text-truncate ">
-                    <span class="sidebar-icon">
-                      <i class="fas fa-print"></i>
-                    </span>
-                    <span class="sidebar-text">Print Laporan </span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="setting.php" class="nav-link d-flex align-items-center text-truncate ">
-                    <span class="sidebar-icon">
-                      <i class="bi bi-gear"></i>
-                    </span>
-                    <span class="sidebar-text">Setting </span>
-                  </a>
-                </li>
+
+
+
 
 
               </ul>
@@ -252,20 +236,26 @@ session_start();
                 <div class="d-flex align-items-center">
 
                   <!--Avatar with status-->
-                  <?php include '../conn.php';
-                  $no = 1;
-                  $data = mysqli_query($con, "select * from petugas where level='admin'");
-                  $d = mysqli_fetch_array($data);
-                  ?>
+
                   <div class="avatar-status status-online me-1 avatar sm">
-                    <?php if ($d['foto'] == "") { ?>
-                      <img src="../pict/user.png" class="rounded-circle img-fluid" alt="">
-                    <?php } else { ?>
-                      <img src="../pict/<?php echo $d['foto'] ?>" class="rounded-circle img-fluid" alt="">
-                    <?php } ?>
+                    <img src="pict/user.png" class="rounded-circle img-fluid" alt="">
                   </div>
                 </div>
               </a>
+
+              <div class="dropdown-menu mt-0 p-0 dropdown-menu-end overflow-hidden">
+                <!--User meta-->
+
+                <div class="p-2">
+                  <a href="login.php" class="dropdown-item">
+                    <i class="fas fa-user opacity-75 fs-5 align-middle me-2">&nbsp;</i>Login Petugas</a>
+
+
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown d-flex align-items-center justify-content-center flex-column h-100">
+
 
               <div class="dropdown-menu mt-0 p-0 dropdown-menu-end overflow-hidden">
                 <!--User meta-->
