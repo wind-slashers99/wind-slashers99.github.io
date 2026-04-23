@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f2ed" id="meta-theme">
+  <title>Nakhlah Yasa — Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- ════════════════ FIXED NAV ════════════════ -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+
+      <a class="nav-brand" href="#hero">Nakhlah Yasa</a>
+
+      <ul class="nav-links">
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects & Experiences</a></li>
+        <li><a href="#social">Social</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <!-- DARK MODE TOGGLE -->
+        <label class="dm-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <span class="dm-icon"><i class="fas fa-sun"></i></span>
+          <div class="dm-switch">
+            <input type="checkbox" id="dm-checkbox">
+            <div class="dm-track"></div>
+            <div class="dm-thumb"></div>
+          </div>
+          <span class="dm-icon"><i class="fas fa-moon"></i></span>
+        </label>
+
+        <!-- HAMBURGER (mobile) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#skills"    onclick="closeMenu()"><i class="fas fa-code"></i>            Skills</a>
+    <a href="#about"     onclick="closeMenu()"><i class="fas fa-user"></i>            About Me</a>
+    <a href="#education" onclick="closeMenu()"><i class="fas fa-graduation-cap"></i>  Education</a>
+    <a href="#projects"  onclick="closeMenu()"><i class="fas fa-folder-open"></i>     Projects</a>
+    <a href="#social"    onclick="closeMenu()"><i class="fas fa-share-alt"></i>       Social</a>
+  </div>
+
+  <!-- ════════════════ CONTENT ════════════════ -->
+  <div class="page">
+
+    <!-- HERO -->
+    <div class="hero" id="hero">
+      <div class="avatar-wrap">
+        <img src="image/almet.jpg" alt="Muhammad Nakhlah Al Yasa"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="avatar-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+      </div>
+      <h1>Muhammad Nakhlah Al Yasa</h1>
+      <span class="subtitle">Electircal Engineering and Full Stack Web Developer</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-badge"><i class="fab fa-css3-alt"></i> CSS</div>
+        <div class="skill-badge"><i class="fab fa-php"></i> PHP</div>
+        <div class="skill-badge"><i class="fa-solid fa-database"></i> DataBase</div>
+        <div class="skill-badge"><i class="fa-solid fa-drafting-compass"></i> AutoCAD</div>
+        <div class="skill-badge"><i class="fa-solid fa-sitemap"></i> Multisim</div>
+        <div class="skill-badge"><i class="fa-solid fa-microchip"></i> Microcontroller</div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-card">
+        Hi! My name is Muhammad Nakhlah Al Yasa, I'm 20 years old.<br>
+        I'm an Electrical Engineering student at the University of Sumatera Utara,
+        passionate about building clean and functional web experiences.
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-year">2020</div>
+          <div class="tl-dot"><span></span></div>
+          <div class="tl-body">
+            <h4>Vocational High School</h4>
+            <p>SMK Tritech Informatika Medan, North Sumatra</p>
+            <span class="tl-badge">Major: Software Engineering</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2023</div>
+          <div class="tl-dot"><span></span></div>
+          <div class="tl-body">
+            <h4>University</h4>
+            <p>University of Sumatera Utara, North Sumatra</p>
+            <span class="tl-badge">Major: Electrical Engineering</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="section-title">Projects & Experiences</h2>
+      <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <div class="proj-card">
+          <div class="proj-thumb">
+            <img src="image/project1.jpg" alt="Project 1"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="proj-thumb-placeholder" style="display:none">
+              <i class="fas fa-laptop-code"></i>
+              <span>Preview tidak tersedia</span>
+            </div>
+            <!-- <span class="proj-tag">Web App</span> -->
+          </div>
+          <div class="proj-body">
+            <h3 class="proj-name">Web Pengaduan Masyarakat</h3>
+            <p class="proj-desc">Web APP yang menggunakan PHP native dan MySQL yang berfungsi sebagai platform pengaduan masyarakat</p>
+            <div class="proj-actions">
+              <!-- <a class="proj-btn demo" href="#" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a> -->
+              <a class="proj-btn repo" href="https://github.com/wind-slashers99/pengaduan" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="proj-card">
+          <div class="proj-thumb">
+            <img src="image/nwc2.JPG" alt="Project 2"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="proj-thumb-placeholder" style="display:none">
+              <i class="fas fa-laptop-code"></i>
+              <span>Preview tidak tersedia</span>
+            </div>
+            <!-- <span class="proj-tag">Website</span> -->
+          </div>
+          <div class="proj-body">
+            <h3 class="proj-name">Bronze Medal National Writing Competition 2025</h3>
+            <p class="proj-desc">mendapatkan bronze medal pada Kompetisi essai tingkat nasional tahun 2025 dengan judul "Simfoni Silikon: Ketika AI Menggubah Masa Depan Pekerjaan
+
+dan Kreativitas Manusia"</p>
+            <div class="proj-actions">
+              <a class="proj-btn demo" href="https://drive.google.com/file/d/1TyyrYKdOp40MIU03ukIDREVRSFY5xWRa/view?usp=drive_link" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i> Poster
+              </a>
+              <!-- <a class="proj-btn repo" href="#" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i> GitHub
+              </a> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="proj-card">
+          <div class="proj-thumb">
+            <img src="image/project3.jpg" alt="Project 3"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="proj-thumb-placeholder" style="display:none">
+              <i class="fas fa-laptop-code"></i>
+              <span>Preview tidak tersedia</span>
+            </div>
+            <!-- <span class="proj-tag">PHP</span> -->
+          </div>
+          <div class="proj-body">
+            <h3 class="proj-name">Magang di perusahaan startup Juni 2023 - juli 2023</h3>
+            <p class="proj-desc">sebagai developer junior dalam pembuatan web kampanye dan juga e-klinik</p>
+            <div class="proj-actions">
+             
+              <a class="proj-btn repo" href="https://github.com/wind-slashers99/eklinik" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div class="proj-card">
+          <div class="proj-thumb">
+            <img src="image/geolistrik.jpg" alt="Project 4"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="proj-thumb-placeholder" style="display:none">
+              <i class="fas fa-laptop-code"></i>
+              <span>Preview tidak tersedia</span>
+            </div>
+            <!-- <span class="proj-tag">JavaScript</span> -->
+          </div>
+          <div class="proj-body">
+            <h3 class="proj-name">Geolistrik</h3>
+            <p class="proj-desc">Proyek Geolistrik untuk pembangunan sumur bor</p>
+            <div class="proj-actions">
+              <!-- <a class="proj-btn demo" href="#" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a>
+              <a class="proj-btn repo" href="#" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i> GitHub
+              </a> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section id="social">
+      <h2 class="section-title">Social Media</h2>
+      <div class="social-grid">
+        <a class="social-btn fb" href="https://wa.me/+6289508864817" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a class="social-btn tw" href="https://twitter.com/_Y_A_S_A?t=I-rNr7FOS24tikJ5BEdB-w&s=08" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i> Twitter
+        </a>
+        <a class="social-btn ig" href="https://www.instagram.com/_nakhyas/" target="_blank" rel="noopener">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a class="social-btn gh" href="https://github.com/wind-slashers99/wind-slashers99.github.io" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Copyright &copy; 2026 Muhammad Nakhlah Al Yasa</p>
+    </footer>
+
+  </div>
+
+  <!-- ════════════════ SCRIPTS ════════════════ -->
+  <script>
+    /* ── DARK MODE ── */
+    const html       = document.documentElement;
+    const dmCheckbox = document.getElementById('dm-checkbox');
+    const metaTheme  = document.getElementById('meta-theme');
+
+    function applyTheme(dark) {
+      html.setAttribute('data-theme', dark ? 'dark' : 'light');
+      metaTheme.content = dark ? '#181613' : '#f5f2ed';
+      dmCheckbox.checked = dark;
+      try { localStorage.setItem('ny-theme', dark ? 'dark' : 'light'); } catch(e) {}
+    }
+
+    // init: saved pref → system pref
+    (function() {
+      let saved;
+      try { saved = localStorage.getItem('ny-theme'); } catch(e) {}
+      applyTheme(saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
+    })();
+
+    dmCheckbox.addEventListener('change', () => applyTheme(dmCheckbox.checked));
+
+    // follow system if no saved pref
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      let saved;
+      try { saved = localStorage.getItem('ny-theme'); } catch(e2) {}
+      if (!saved) applyTheme(e.matches);
+    });
+
+    /* ── HAMBURGER ── */
+    const hamburger  = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mainNav    = document.getElementById('main-nav');
+
+    function openMenu()  {
+      mobileMenu.classList.add('open');
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    hamburger.addEventListener('click', e => {
+      e.stopPropagation();
+      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    // close on outside tap
+    document.addEventListener('click', e => {
+      if (!mainNav.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
+    });
+
+    // close on Escape
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Nakhlah Yasa — Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── FIXED NAVIGATION ── -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="#hero">Nakhlah Yasa</a>
+      <ul class="nav-links">
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#social">Social</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── PAGE CONTENT ── -->
+  <div class="page">
+
+    <!-- HERO -->
+    <div class="hero" id="hero">
+      <div class="avatar-wrap">
+        <img src="image/pp.jpg" alt="Muhammad Nakhlah Al Yasa"
+             onerror="this.replaceWith(document.querySelector('.avatar-placeholder').cloneNode(true))">
+        <div class="avatar-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+      </div>
+      <h1>Muhammad Nakhlah Al Yasa</h1>
+      <span class="subtitle">Full Stack Web Developer</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-badge"><i class="fab fa-html5"></i> HTML</div>
+        <div class="skill-badge"><i class="fab fa-css3-alt"></i> CSS</div>
+        <div class="skill-badge"><i class="fab fa-php"></i> PHP</div>
+        <div class="skill-badge"><i class="fab fa-js-square"></i> JavaScript</div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-card">
+        Hi! My name is Muhammad Nakhlah Al Yasa, I'm 20 years old.<br>
+        I'm an Electrical Engineering student at the University of Sumatera Utara,
+        passionate about building clean and functional web experiences.
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="tl">
+
+        <div class="tl-item">
+          <div class="tl-year">2020</div>
+          <div class="tl-dot"><span></span></div>
+          <div class="tl-body">
+            <h4>Vocational High School</h4>
+            <p>SMK Tritech Informatika Medan, North Sumatra</p>
+            <span class="badge">Major: Software Engineering</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">2023</div>
+          <div class="tl-dot"><span></span></div>
+          <div class="tl-body">
+            <h4>University</h4>
+            <p>University of Sumatera Utara, North Sumatra</p>
+            <span class="badge">Major: Electrical Engineering</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section id="social">
+      <h2 class="section-title">Social Media</h2>
+      <div class="social-grid">
+        <a class="social-btn fb" href="https://www.facebook.com/nakhlah.yasa.7/" target="_blank" rel="noopener">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+        <a class="social-btn tw" href="https://twitter.com/_Y_A_S_A?t=I-rNr7FOS24tikJ5BEdB-w&s=08" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i> Twitter
+        </a>
+        <a class="social-btn ig" href="https://www.instagram.com/_nakhyas/" target="_blank" rel="noopener">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a class="social-btn gh" href="https://github.com/wind-slashers99/wind-slashers99.github.io" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Copyright &copy; 2022 Muhammad Nakhlah Al Yasa</p>
+    </footer>
+
+  </div><!-- /page -->
+
+</body>
+</html>
