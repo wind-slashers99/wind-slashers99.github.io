@@ -112,7 +112,7 @@
         section > * { position: relative; z-index: 2; }
 
 .arch-container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/photo.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/Photo.jpeg');
     background-size: cover;
     background-position: center;
     color: white;
