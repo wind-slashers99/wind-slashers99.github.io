@@ -1,0 +1,394 @@
+  :root {
+            --primary-dark: #0f172a;
+            --accent-gold: #c5a880;
+            --btn-maroon: #730000;
+            --text-light: #f8fafc;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #121212; 
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-light);
+            display: flex;
+            justify-content: center; 
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll; 
+        }
+
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+
+        .mobile-wrapper {
+            width: 100%;
+            max-width: 480px; 
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 25px rgba(0,0,0,0.8); 
+            background-color: var(--primary-dark); 
+            overflow-x: hidden;
+        }
+
+        #cover {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            max-width: 480px;
+            height: 100vh;
+            background-color: #f4f4f4;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding-bottom: 70px;
+            transition: top 1.5s ease-in-out;
+            background-image: url('assets/cover-couple.JPG'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cover-content {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 20px 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-open {
+            background-color: var(--btn-maroon);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .btn-open:hover { background-color: #5a0000; transform: translateY(-2px); }
+
+        section {
+            position: relative;
+            padding: 80px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-position: center;
+            border-bottom: 8px solid #000000; 
+        }
+
+        .section-default {
+            background-image: url('assets/background.png');
+            background-size: cover;
+        }
+
+        .section-quotes {
+            background-image: url('assets/bg.png');
+            background-size: cover;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.15); 
+            z-index: 1;
+        }
+
+        section > * { position: relative; z-index: 2; }
+
+.arch-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/photo.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 200px 200px 0 0;
+    padding: 80px 20px 220px;
+    width: 90%;
+    height: 600px; /* ← tambahkan di sini */
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 400px; 
+        }
+
+        .countdown-box {
+            background-color: rgba(0, 0, 0, 0.5); 
+            border: 1px solid var(--accent-gold);
+            border-radius: 10px;
+            padding: 15px 5px;
+            text-align: center;
+            flex: 1; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            backdrop-filter: blur(3px);
+        }
+
+        .countdown-number {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .countdown-label { color: #f8fafc; font-size: 0.75rem; margin-top: 5px; }
+
+        .title-gold {
+            color: var(--accent-gold);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .quote-box {
+            background: #1a1a1a;
+            border: 1px solid var(--accent-gold);
+            padding: 40px 20px;
+            border-radius: 100px;
+            width: 85%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .gold-frame {
+            position: relative;
+            width: 100%;
+            max-width: 320px; 
+            margin: 0 auto 20px auto;
+            padding: 50px 40px 90px 40px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .foto-profil {
+            width: 100%; height: auto;
+            border-radius: 10px; 
+            position: relative;
+            z-index: 1; 
+            display: block;
+        }
+
+        .bingkai-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 2; 
+            pointer-events: none; 
+        }
+
+        .glass-oval {
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 150px;
+            padding: 50px 20px;
+            backdrop-filter: blur(4px); 
+            background: rgba(0, 0, 0, 0.3);
+            width: 90%;
+        }
+
+        .btn-map {
+            display: inline-block;
+            background-color: var(--btn-maroon);
+            color: white;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .gallery-grid img {
+            width: 100%; height: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .gallery-grid img:nth-child(3) { grid-column: span 2; }
+
+        .rsvp-box {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--accent-gold);
+            padding: 40px 20px;
+            border-radius: 20px;
+            width: 90%;
+            backdrop-filter: blur(5px);
+        }
+        .form-group { margin-bottom: 15px; text-align: left; }
+        .form-group label { display: block; color: var(--accent-gold); margin-bottom: 5px; font-size: 14px; }
+        .form-control {
+            width: 100%; padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px; color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .thankyou-box {
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid var(--accent-gold);
+            padding: 40px 20px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            margin: 0 auto;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .watermark {
+            font-size: 12px;
+            color: #a0a0a0; 
+            margin-top: 40px;
+            letter-spacing: 1.5px;
+            font-weight: 300;
+        }
+
+        .music-wrapper {
+            position: fixed; bottom: 30px;
+            width: 100%; max-width: 480px;
+            pointer-events: none; z-index: 10000;
+        }
+        .music-btn {
+            float: right; margin-right: 20px;
+            width: 50px; height: 50px;
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px; cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            opacity: 0; pointer-events: auto; transition: opacity 0.5s;
+        }
+        .music-btn.show { opacity: 1; }
+        .spin { animation: spinMusic 3s linear infinite; }
+        @keyframes spinMusic { 100% { transform: rotate(360deg); } }
+        
+        body.locked { overflow: hidden; }
+
+        /* MODAL RSVP */
+        #rsvpModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.80);
+            z-index: 99998;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .rsvp-modal-inner {
+            background: var(--primary-dark);
+            border: 1px solid var(--accent-gold);
+            border-radius: 20px;
+            padding: 35px 25px 30px;
+            width: 100%;
+            max-width: 440px;
+            position: relative;
+            margin: auto;
+            animation: modalFadeIn 0.4s ease;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        }
+        .rsvp-modal-close {
+            position: absolute;
+            top: 12px; right: 16px;
+            background: transparent;
+            border: none;
+            color: var(--accent-gold);
+            font-size: 26px;
+            cursor: pointer;
+            line-height: 1;
+            transition: 0.2s;
+        }
+        .rsvp-modal-close:hover { color: #fff; transform: scale(1.2); }
+        .rsvp-modal-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.92) translateY(20px); }
+            to   { opacity: 1; transform: scale(1)  translateY(0); }
+        }
+
+        /* =====================================================
+           ✨ ANIMASI BINTANG & LENTERA — TAMBAHAN BARU
+        ===================================================== */
+
+        /* Overlay transparan di atas background, di bawah konten */
+        .stars-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        /* Titik bintang */
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 4px 1px rgba(255,255,255,0.55);
+            animation: twinkleStar var(--dur, 2s) ease-in-out infinite var(--delay, 0s);
+        }
+
+        @keyframes twinkleStar {
+            0%, 100% { opacity: 0.07; transform: scale(0.6); }
+            50%       { opacity: 1;    transform: scale(1.5); }
+        }
+
+        /* Cahaya lentera */
+        .lantern-glow {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 2;
+            animation: lanternFlicker var(--ldur, 2.8s) ease-in-out infinite var(--ldelay, 0s);
+            border: 2px solid red; /* hapus setelah selesai */
+        }
+
+        @keyframes lanternFlicker {
+            0%   { opacity: 0.50; transform: scale(1.00); filter: blur(7px);  }
+            15%  { opacity: 0.88; transform: scale(1.18); filter: blur(10px); }
+            30%  { opacity: 0.35; transform: scale(0.90); filter: blur(6px);  }
+            50%  { opacity: 1.00; transform: scale(1.25); filter: blur(12px); }
+            70%  { opacity: 0.55; transform: scale(1.05); filter: blur(8px);  }
+            85%  { opacity: 0.82; transform: scale(1.12); filter: blur(9px);  }
+            100% { opacity: 0.50; transform: scale(1.00); filter: blur(7px);  }
+        }
+
+        /* =====================================================
+           END ANIMASI
+        ===================================================== */
