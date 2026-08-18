@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youlook Potrait</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161513;
+    --paper:#faf9f6;
+    --muted:#9a978d;
+    --line:#e6e3da;
+    --serif:'Cormorant Garamond', serif;
+    --sans:'Inter', Arial, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    background:var(--paper);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* HEADER */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(250,249,246,.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    max-width:1400px; margin:0 auto;
+    padding:16px 40px;
+    font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--muted);
+  }
+  .topbar a{color:var(--muted); text-decoration:none; transition:color .25s ease;}
+  .topbar a:hover{color:var(--ink);}
+  .topbar .mark{
+    font-family:var(--serif);
+    font-size:16px; letter-spacing:.04em;
+    color:var(--ink);
+    text-transform:none;
+  }
+
+  /* HERO */
+  .hero{
+    text-align:center;
+    padding:120px 20px 70px;
+    position:relative;
+  }
+  .hero .eyebrow{
+    font-size:10px; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:22px;
+  }
+  .hero .logo{
+    font-family:var(--serif);
+    font-size:clamp(40px, 7vw, 68px);
+    font-weight:400;
+    letter-spacing:.02em;
+    line-height:1.05;
+  }
+  .hero .logo em{ font-style:italic; }
+  .hero .tagline{
+    margin-top:20px;
+    font-size:13px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .hero .contact{
+    margin-top:28px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .hero .contact a{color:var(--ink); text-decoration:none; margin:0 8px; border-bottom:1px solid transparent; transition:border-color .25s ease;}
+  .hero .contact a:hover{border-color:var(--ink);}
+  .hero .divider{
+    width:1px; height:60px;
+    background:var(--line);
+    margin:50px auto 0;
+  }
+
+  /* GALLERY */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:2px;
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 2px;
+  }
+  .tile{
+    position:relative;
+    overflow:hidden;
+    background:#e9e7df;
+    display:block;
+    text-decoration:none;
+    grid-column:span 3;
+    aspect-ratio:4/5;
+    opacity:0;
+    transform:translateY(18px);
+    animation:rise .7s ease forwards;
+  }
+  .tile:nth-child(1){ grid-column:span 4; animation-delay:.02s; }
+  .tile:nth-child(2){ grid-column:span 2; animation-delay:.08s; }
+  .tile:nth-child(3){ grid-column:span 2; animation-delay:.14s; }
+  .tile:nth-child(4){ grid-column:span 2; animation-delay:.2s; }
+  .tile:nth-child(5){ grid-column:span 2; animation-delay:.26s; }
+  .tile:nth-child(6){ grid-column:span 3; animation-delay:.32s; }
+  .tile:nth-child(7){ grid-column:span 3; animation-delay:.38s; }
+
+  @keyframes rise{
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  .tile img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .tile:hover img{ transform:scale(1.05); }
+
+  .tile .caption{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:26px 26px 22px;
+    background:linear-gradient(to top, rgba(10,10,8,.65), transparent 65%);
+    color:#fdfcf9;
+    opacity:0;
+    transform:translateY(6px);
+    transition:opacity .35s ease, transform .35s ease;
+  }
+  .tile:hover .caption{ opacity:1; transform:translateY(0); }
+  .tile .caption .title{
+    font-family:var(--serif);
+    font-size:20px;
+    letter-spacing:.02em;
+  }
+  .tile .caption .sub{
+    font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+    color:rgba(253,252,249,.75);
+    margin-top:6px;
+  }
+
+  .tile .corner{
+    position:absolute; top:16px; right:16px;
+    width:26px; height:26px;
+    border:1px solid rgba(255,255,255,.55);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    opacity:0;
+    transition:opacity .3s ease;
+  }
+  .tile:hover .corner{ opacity:1; }
+  .tile .corner svg{ width:11px; height:11px; }
+
+  /* PAGINATION */
+  .pagination{
+    display:flex; justify-content:center; align-items:center; gap:14px;
+    padding:60px 20px 40px;
+    font-size:12px; letter-spacing:.06em;
+  }
+  .pagination a, .pagination span{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width:30px; height:30px;
+    color:var(--muted); text-decoration:none;
+    transition:color .25s ease;
+  }
+  .pagination a:hover{ color:var(--ink); }
+  .pagination .current{
+    color:var(--ink);
+    border:1px solid var(--ink);
+    border-radius:50%;
+  }
+
+  footer{
+    text-align:center;
+    padding:34px 20px 60px;
+    font-size:10px; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--muted);
+    border-top:1px solid var(--line);
+    margin-top:10px;
+  }
+
+  @media (max-width:900px){
+    .gallery{ grid-template-columns:repeat(4, 1fr); }
+    .tile, .tile:nth-child(1), .tile:nth-child(2), .tile:nth-child(3),
+    .tile:nth-child(4), .tile:nth-child(5), .tile:nth-child(6), .tile:nth-child(7){
+      grid-column:span 2;
+    }
+  }
+  @media (max-width:560px){
+    .gallery{ grid-template-columns:1fr; }
+    .tile, .tile:nth-child(1), .tile:nth-child(2), .tile:nth-child(3),
+    .tile:nth-child(4), .tile:nth-child(5), .tile:nth-child(6), .tile:nth-child(7){
+      grid-column:span 1;
+    }
+    .hero{ padding:80px 20px 40px; }
+    .topbar{ padding:14px 20px; }
+    .hero .divider{ margin-top:34px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <a href="#" class="mark">Youlook Potrait</a>
+    <a href="#">Instagram</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Wedding &amp; portrait photography</div>
+  <div class="logo">Youlook <em>Potrait</em></div>
+  <div class="tagline">Live studio portraits</div>
+  <div class="contact">
+    <a href="tel:0000000000">0000-000-0000</a> &middot;
+    <a href="mailto:hello@youlookpotrait.com">hello@youlookpotrait.com</a>
+  </div>
+  <div class="divider"></div>
+</section>
+
+<main class="gallery">
+  <a class="tile" href="#">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1400&auto=format&fit=crop" alt="Rafly & Feliza">
+    <div class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg></div>
+    <div class="caption">
+      <div class="title">Rafly &amp; Feliza</div>
+      <div class="sub">Hotel Santika Premiere &middot; Agustus 2026</div>
+    </div>
+  </a>
+
+  <a class="tile" href="#">
+    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop" alt="Album">
+    <div class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg></div>
+    <div class="caption">
+      <div class="title">Aditya &amp; Nabila</div>
+      <div class="sub">Medan &middot; Juli 2026</div>
+    </div>
+  </a>
+
+  <a class="tile" href="#">
+    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=1200&auto=format&fit=crop" alt="Album">
+    <div class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg></div>
+    <div class="caption">
+      <div class="title">Studio Session</div>
+      <div class="sub">Medan &middot; Juni 2026</div>
+    </div>
+  </a>
+
+  <a class="tile" href="#">
+    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200&auto=format&fit=crop" alt="Album">
+    <div class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg></div>
+    <div class="caption">
+      <div class="title">Farhan &amp; Alya</div>
+      <div class="sub">Medan &middot; Mei 2026</div>
+    </div>
+  </a>
+
+  <a class="tile" href="#">
+    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop" alt="Album">
+    <div class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg></div>
+    <div class="caption">
+      <div class="title">Prewedding</div>
+      <div class="sub">Danau Toba &middot; April 2026</div>
+    </div>
+  </a>
+
+  <a class="tile" href="#">
+    <img src="https://images.unsplash.com/photo-1583939411023-15b9b8a5f620?q=80&w=1400&auto=format&fit=crop" alt="Album">
+    <div class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg></div>
+    <div class="caption">
+      <div class="title">Reza &amp; Citra</div>
+      <div class="sub">Medan &middot; Maret 2026</div>
+    </div>
+  </a>
+
+  <a class="tile" href="#">
+    <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?q=80&w=1400&auto=format&fit=crop" alt="Album">
+    <div class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg></div>
+    <div class="caption">
+      <div class="title">Family Portrait</div>
+      <div class="sub">Medan &middot; Februari 2026</div>
+    </div>
+  </a>
+</main>
+
+<div class="pagination">
+  <a href="#">&laquo; First</a>
+  <span class="current">1</span>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">Last &raquo;</a>
+</div>
+
+<footer>&copy; Youlook Potrait</footer>
+
+</body>
+</html>
